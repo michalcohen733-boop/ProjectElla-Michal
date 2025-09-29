@@ -1,3 +1,4 @@
+
 import requests
 
 class VirusScan:
@@ -24,3 +25,4 @@ if __name__ == "__main__":
     file_hash = "420e57b017066b44e05ea1577f6e2e12"
     stats = scanner.get_virustotal_score(file_hash)
     print(stats)
+
