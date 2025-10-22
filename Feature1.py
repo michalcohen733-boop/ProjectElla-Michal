@@ -11,12 +11,18 @@ class FileScanner:
         for root, d_names, f_names in os.walk(self.path):
             for f in f_names:
                 if f.endswith('.exe') or f.endswith('.dll'):
+                    #print(f)
                     self.files.append(os.path.join(root, f))
-        print(self.files)
+        return self.files
 
 
-def file_read():
-    path = input("Enter the file path: ")
-    file_scanner = FileScanner(path)
-    file_scanner.get_file_list()
-    print(file_scanner.files)
+
+
+# def check():
+#     path = r'C:\Users\Cyber_Mamriot\Desktop\mamriot26\LOL'
+#     check = FileScanner(path)
+#     print(check.get_file_list())
+#
+# check() ['C:\\Users\\Cyber_Mamriot\\Desktop\\mamriot26\\LOL\\UnRAR.exe']
+#
+
