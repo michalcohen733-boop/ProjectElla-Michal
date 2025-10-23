@@ -1,9 +1,9 @@
 from encoder import Encoder
-from Feature1 import *
+from filelist import *
 import os
 import sys
 from virus_scan import VirusScan
-from mainfet3 import go_to_virus_scan
+from gotovirustotal import go_to_virus_scan
 
 def get_file_content(file_path):
     file = open(file_path, "rb")
