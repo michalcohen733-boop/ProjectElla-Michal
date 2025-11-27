@@ -1,5 +1,6 @@
 from encoder import *
 from filelist import *
+import datetime
 import os
 import sys
 from virus_scan import VirusScan
@@ -34,15 +35,24 @@ def get_file_hash(file_path, hash_type = "sha256"):
 #         print(hash1, os.path.basename(file))
 
 def start_scan(path):
+
+    f = open("report.txt", "a")
     scan = FileScanner(path)
     list_of_files = scan.get_file_list()
-    for f in list_of_files:
-        file = f
-        content= get_file_content(file)
+    for i in list_of_files:
+        f.write(i + ", ")
+        x = datetime.datetime.now()
+        f.write(str(x) + ", ")
+        file = i
+        content = get_file_content(file)
         try:
             hash_value = get_file_hash(file)
             final_result = go_to_virus_scan(hash_value)
             print(final_result)
+            if final_result == None:
+                f.write("file is good" + "\n")
+            else:
+                f.write(str(final_result) + "\n")
         except Exception as e:
             print(e)
 
