@@ -1,4 +1,6 @@
 import hashlib
+
+
 class MD5HASH:
 #MD5
     def calculate_hash_value(self, value):
